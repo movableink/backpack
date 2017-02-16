@@ -2,9 +2,7 @@ import CD from 'cropduster';
 
 export default class Backpack {
 
-  constructor(){
-
-  }
+  constructor(){}
 
   /**
    * @param {string} msg
@@ -15,16 +13,16 @@ export default class Backpack {
       this.stack = (new Error(msg)).stack;
       this.handleFallback({message : this.message, stack : this.stack});
   }
-  ​
+  /*
+   *  Determine the type of error we just had
+   *  Was it something we were looking for i.e not enough items (in which case it is a cancelRequest)
+   *  Or was it an error we didn't catch i.e API returned non JSON information when we were expecting JSON (in which case we throw an error, which in turns notifies Dev)
+   *  @param e Error
+  */
   handleFallback(e){
-    /*
-     *  Determine the type of error we just had
-     *  Was it something we were looking for i.e not enough items (in which case it is a cancelRequest)
-     *  Or was it an error we didn't catch i.e API returned non JSON information when we were expecting JSON (in which case we throw an error, which in turns notifies Dev)
-     */
     if(e instanceof Error) {
       console.log(e);
-      //CD.throwError(e);
+      CD.throwError(e);
     } else {
       console.log(e.message);
       console.log(e.stack);
