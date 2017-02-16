@@ -4,16 +4,14 @@
   "description": "Lib for building custom apps and projects for use with Movable Ink",
   "main": "dist/backpack.js",
   "directories": {
-    "test": "tests",
     "lib": "src"
   },
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
-    "babel-core": "^6.21.0",
-    "babel-loader": "^6.2.10",
-    "babel-preset-es2015": "^6.18.0",
-    "webpack": "^2.2.0-rc.3"
+    "babel-core": "6.21.0",
+    "babel-loader": "6.2.10",
+    "babel-preset-es2015": "6.18.0",
+    "webpack": "2.2.0-rc.3"
   },
   "scripts": {
     "dev": "webpack --progress --watch",
@@ -36,6 +34,14 @@
     {
       "name": "Roger Rodriguez",
       "email": "rrodriguez@movableink.com"
+    },
+    {
+      "name": "Michael Nguyen",
+      "email": "mnguyen@movableink.com"
+    },
+    {
+      "name": "Peter Lo",
+      "email": "plo@movableink.com"
     }
   ],
   "license": "MIT",
