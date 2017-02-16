@@ -1,52 +1,49 @@
 # Backpack
 
-Backpack is for building custom apps for use with Movable Ink
+Backpack is for building custom apps and projects for use with Movable Ink
 
 ## Installation
 
-Backpack is on bower. Install it with:
+In your `package.json` include the following in your dependecies:
 
 ```bash
-npm install -g bower # if bower is not installed yet
-bower init
-bower install --save mi-backpack
+
+"dependencies": {
+   "backpack": "git+ssh://git@github.com/movableink/backpack.git"
+ }
+
+
 ```
 
-Then use it by referencing it from your HTML page:
-
-```html
-<script src="bower_components/mi-backpack/lib/backpack.js"></script>
-```
-
-And from your JS:
+Then use it by importing it:
 
 ```javascript
-var myApp = new Backpack();
+import backpack from "backpack";
+```
+
+And from your project:
+
+```javascript
+class Project extends Backpack{
+  
+  constructor(){
+    super();
+  }
+  
+};
 ```
 
 ## API
 
 ### Trigger the fallback image
 
-`.forceFallback()` is useful for triggering the static fallback image associated with the block. Note: by default it will remove the `#mi_size_container` element from the DOM.
+`.forceFallback()` is useful for triggering the static fallback image associated with the block.
 
 Example:
 
 ```javascript
-myApp.forceFallback()
+Project.forceFallback()
 ```
-
-
-### Logging to console
-
-`.logger()` makes it easier to follow `console.logs()` inside the app debug console.
-
-Example:
-
-```javascript
-myApp.logger('hello world')
-```
-
 
 ### Trigger an event
 
@@ -55,7 +52,7 @@ myApp.logger('hello world')
 Example:
 
 ```javascript
-myApp.trigger('error', 'some helpful error comment');
+Project.trigger('error', 'some helpful error comment');
 ```
 
 
@@ -66,7 +63,7 @@ myApp.trigger('error', 'some helpful error comment');
 Example:
 
 ```javascript
-myApp.on('error', function(msg){
+Project.on('error', function(msg){
 	// msg.detail -- 'some helpful error comment'
 });
 ```
