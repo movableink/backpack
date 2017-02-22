@@ -18,7 +18,7 @@ In your `package.json` include the following in your dependecies:
 Then use it by importing it:
 
 ```javascript
-import backpack from "backpack";
+import Backpack from "backpack";
 ```
 
 And from your project:
