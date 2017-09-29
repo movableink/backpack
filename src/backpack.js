@@ -15,6 +15,11 @@ export default class Backpack {
    * @returns {*}
    */
   forceFallback(e){
+
+    const extraData = this.getState();
+    this.setState('default', true);
+    CD.setExtraData(extraData);
+
     if(e instanceof Error){
       CD.log(e);
       return CD.throwError(e);
@@ -54,6 +59,25 @@ export default class Backpack {
       callback(e);
     });
 
+  }
+
+  /***
+   * Sets a value to a key for extraData
+   * @param key
+   * @param value
+   */
+  setState(key, value){
+    this.extraData = this.getState();
+    this.extraData[key] = value;
+  }
+
+  /***
+   * Returns all data currently in extraData object
+   * @returns {object}
+   */
+  getState(){
+    this.extraData = (this.extraData) ? this.extraData : {};
+    return this.extraData;
   }
 
 }

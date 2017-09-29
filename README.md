@@ -25,11 +25,11 @@ And from your project:
 
 ```javascript
 class Project extends Backpack{
-  
+
   constructor(){
     super();
   }
-  
+
 };
 ```
 
@@ -66,4 +66,24 @@ Example:
 Project.on('error', function(msg){
 	// msg.detail -- 'some helpful error comment'
 });
+```
+
+### Set data to extraData object
+
+`.setState()` attaches an additional key to this object with the key and value passed.
+
+Example:
+
+```javascript
+Project.setState('companyID', 1);
+```
+
+### Get data in the extraData object
+
+`getState()` will return all the data that is currently set in `this.extraData`;
+
+Example:
+
+```javascript
+const extraData = this.getState();
 ```
