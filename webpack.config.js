@@ -13,11 +13,6 @@ module.exports = {
   },
   context   : resolve(__dirname, 'src'),
   devtool   : 'inline-source-map',
-  externals : {
-    'cropduster' : {
-      root : 'CD'
-    }
-  },
   module    : {
     rules : [
       {
