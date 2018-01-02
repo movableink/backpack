@@ -1,12 +1,14 @@
 {
   "name": "backpack",
-  "version": "2.0.0",
+  "version": "3.0.0",
   "description": "Lib for building custom apps and projects for use with Movable Ink",
   "main": "dist/backpack.js",
   "directories": {
     "lib": "src"
   },
-  "dependencies": {},
+  "dependencies": {
+    "cropduster": "^4.1.0"
+  },
   "devDependencies": {
     "babel-core": "6.21.0",
     "babel-loader": "6.2.10",

@@ -1,3 +1,5 @@
+import CD from 'cropduster';
+
 export default class Backpack {
 
   /**
